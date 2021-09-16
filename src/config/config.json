@@ -1,0 +1,12 @@
+{
+    "app": {
+        "port": 5000,
+        "env" : {
+            "FLASK_ENV" : "development"
+        }
+    },
+	"logging" : {
+		"loggerLocation" : "outlier-detection-multi-dimensions.log",
+		"loggerLevel" : "DEBUG"
+	}    
+  }
