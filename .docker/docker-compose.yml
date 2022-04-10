@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  outlier-detection-multi-dimensions:
+    build: 
+      context: .
+      args:
+        - API_NAME=outlier-detection-multi-dimensions
+    ports:
+      - "5000:5000"
+    volumes:
+      - /root/config:/apps/outlier-detection-multi-dimensions/config
+    
