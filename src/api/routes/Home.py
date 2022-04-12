@@ -1,7 +1,7 @@
 # MyPy for Static Typing
 from typing import List, Set, Dict, Tuple, Optional, Any, Union
 
-# Customer Modules
+# Custom Modules
 from api.helpers.logger import logger
 from api.services.DetectOutliers import DetectOutliers
 

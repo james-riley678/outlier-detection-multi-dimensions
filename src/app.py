@@ -1,12 +1,13 @@
 # MyPy for Static Typing
 from typing import List, Set, Dict, Tuple, Optional, Any, Union
 
-# Customer Modules
+# Custom Modules
 from api.helpers.config import config
 from api.helpers.logger import logger
 
 # PyPi Modules
-from flask import Flask, request
+from flask import Flask
+from flask import request
 from flask_restful import Resource, Api
 from flask_cors import CORS, cross_origin
 import logging
