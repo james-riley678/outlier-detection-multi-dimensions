@@ -1,7 +1,7 @@
 # MyPy for Static Typing
 from typing import List, Set, Dict, Tuple, Optional, Any, Union
 
-# Customer Modules
+# Custom Modules
 from api.helpers.logger import logger
 
 # PyPi Modules
@@ -27,9 +27,9 @@ class DetectOutliers:
         df: DataFrame
 
         if extension == '.csv':
-            df = pd.read_csv(f'files/{fileName}', header = None)
+            df = pd.read_csv(f'files/{fileName}', header = 0)
         elif extension == '.xlsx':
-            df = pd.read_excel(f'files/{fileName}', header = None)
+            df = pd.read_excel(f'files/{fileName}', header = 0)
         else:
             raise DetectOutliersError(f'File type is {extension}, can only be of type: xlsx, csv')
         
@@ -48,9 +48,9 @@ class DetectOutliers:
         logger.info(f'Best R2: {bestR2}')
         df['yhat'] = yhat
 
-        thisDateTime: str = (datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')
+        thisDateTime: str = (datetime.datetime.now()).strftime('%Y-%m-%d %H_%M_%S')
         newFileLocation: str = f'files/outliers_{thisDateTime}.csv'
-        df.to_csv(newFileLocation, header = False, index=False)
+        df.to_csv(newFileLocation, index=False)
 
         return newFileLocation
         
@@ -141,7 +141,7 @@ class DetectOutliers:
         return  dict(r2 = bestR2, yhat = yhat)
 
     def __getFit(self, xTrain, xTest, yTrain, yTest):
-        model = LinearRegression(fit_intercept= True, normalize=False)
+        model = LinearRegression(fit_intercept= True)
         model.fit(xTrain, yTrain)
         rSquared = model.score(xTest, yTest)
         logger.debug(f'R2: {rSquared}')
@@ -149,9 +149,9 @@ class DetectOutliers:
         return rSquared
 
     def __splitData(self, df: DataFrame):
-        data: list = df.values
+        data: ndarray = df.values
 
-        self.x: ndarray; self.y: ndarray; testSize: int 
+        self.x: ndarray; self.y: ndarray; testSize: float 
         self.x, self.y = data[:, :-1], data[:, -1]
         if self.x.shape[0] >= 1000:
             testSize = 0.2

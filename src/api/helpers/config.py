@@ -1,8 +1,9 @@
+# MyPy for Static Typing
 from typing import List, Set, Dict, Tuple, Optional, Any, Iterable
 
+# PyPi Modules
 import json
 import os
-
 
 class Config:
     def __init__(self) -> None:
