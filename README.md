@@ -2,7 +2,7 @@
 This service is an API that detects outliers from data supplised by the user.
 
 # Author
-James Riley : james.riley@ims-evolve.com
+James Riley : james.riley678@gmail.com
 
 # Run
 ```bash
