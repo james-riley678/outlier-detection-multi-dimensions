@@ -56,7 +56,6 @@ class FlaskApi:
     def __initialiseRoutes(self) -> None:
         import api.routes as routes
         self.api.add_resource(routes.Home.Home, '/')
-        # self.api.add_resource(routes.RunReport.RunReport, '/') 
 
     def __initialiseEnvVariables(self) -> None:
         envVariables: dict = config['app']['env']        
