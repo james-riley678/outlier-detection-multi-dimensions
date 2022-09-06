@@ -8,7 +8,7 @@ ENV TZ=Europe/London \
     # API Env Variables
     API_NAME=$API_NAME \
     PYTHON_ENV=config \
-    PYTHON_CONFIG_DIR=/apps/regression-engine/config \
+    PYTHON_CONFIG_DIR=/apps/outlier-detection-multi-dimensions/config \
     # PROXY Env Variable
     http_proxy=$PROXY \
     https_proxy=$PROXY
