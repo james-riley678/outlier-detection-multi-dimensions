@@ -14,7 +14,7 @@ cd src && pipenv install
 
 export PYTHON_CONFIG_DIR=config
 
-export PYTHON_ENV=template
+export PYTHON_ENV=config
 
 pipenv run build && pipenv run prod
 ```
